@@ -34,13 +34,13 @@ decomposition_temp = seasonal_decompose(df_temp['temperature'], model='additive'
 decomposition_temp.plot()
 plt.show()
 
-# Airline Passengers Data (Multiplicative)
-air_passengers = get_rdataset('AirPassengers').data
-air_passengers['date'] = pd.date_range(start='1949-01', periods=len(air_passengers), freq='M')
-air_passengers.set_index('date', inplace=True)
+# Power_consumption Data (Multiplicative)
+Power_consumption = get_rdataset('Power_consumption').data
+Power_consumption['date'] = pd.date_range(start='1949-01', periods=len(Power_consumption), freq='M')
+Power_consumption.set_index('date', inplace=True)
 
-# Decompose Airline Passengers Data (Multiplicative Model)
-decomposition_passengers = seasonal_decompose(air_passengers['value'], model='multiplicative')
+# Decompose Power_consumption Data (Multiplicative Model)
+decomposition_passengers = seasonal_decompose(Power_consumption['value'], model='multiplicative')
 decomposition_passengers.plot()
 plt.show()
 ```
